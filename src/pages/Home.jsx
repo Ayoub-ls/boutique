@@ -40,7 +40,7 @@ export default function Home() {
               className="relative hidden md:block"
             >
               <img
-                src="https://images.unsplash.com/photo-1488161628813-244a2ceba245?q=80&w=1920&auto=format&fit=crop"
+                src="./images/boutique-hero2.png"
                 alt="Hero"
                 className="w-full h-[70vh] object-cover rounded-2xl shadow-2xl"
               />
