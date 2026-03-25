@@ -8,10 +8,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="text-xl font-bold tracking-tighter text-slate-900">
-              BOUTIQUE RS<span className="text-slate-400">.</span>
+              BOUTIQUE DEMO<span className="text-slate-400">.</span>
             </Link>
             <p className="text-sm text-slate-500 leading-relaxed">
-              © 2026 Boutique RS.<br />All Rights Reserved.
+              © 2026 BOUTIQUE DEMO.<br />All Rights Reserved.
             </p>
           </div>
 
@@ -42,9 +42,9 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-widest text-slate-900 mb-6">Subscribe</h3>
             <p className="text-sm text-slate-500 mb-6">Get E-mail updates about our latest shop and special offers.</p>
             <form className="space-y-4">
-              <input 
-                type="email" 
-                placeholder="Enter your email here.." 
+              <input
+                type="email"
+                placeholder="Enter your email here.."
                 className="w-full bg-transparent border-b border-slate-200 py-2 text-sm focus:outline-none focus:border-slate-900 transition-colors"
               />
               <button className="w-full px-6 py-3 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-xl hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 hover:-translate-y-0.5 transition-all duration-300 active:scale-95">
