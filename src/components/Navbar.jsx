@@ -12,7 +12,7 @@ export default function Navbar() {
           {/* Logo - Desktop Only */}
           {!isMobile && (
             <Link to="/" className="text-xl md:text-2xl font-bold tracking-tighter text-slate-900">
-              BOUTIQUE RS<span className="text-slate-400">.</span>
+              BOUTIQUE DEMO<span className="text-slate-400">.</span>
             </Link>
           )}
 
@@ -45,7 +45,7 @@ export default function Navbar() {
                 0
               </span>
             </Link>
-            
+
             {/* Menu Icon - Desktop Only (Mobile Menu is in Header) */}
             {!isMobile && (
               <button className="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 active:scale-95">
