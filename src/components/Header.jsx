@@ -40,11 +40,11 @@ export default function Header() {
         <div className="flex justify-between items-center w-full">
           {/* Logo */}
           <Link to="/" className="text-xl font-bold tracking-tighter text-slate-900">
-            BOUTIQUE RS<span className="text-slate-400">.</span>
+            BOUTIQUE DEMO<span className="text-slate-400">.</span>
           </Link>
 
           {/* Menu Icon */}
-          <button 
+          <button
             onClick={() => setIsOpen(true)}
             className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all duration-300 active:scale-95"
           >
@@ -78,7 +78,7 @@ export default function Header() {
                 <Link to="/" className="text-xl font-bold tracking-tighter text-slate-900">
                   BOUTIQUE RS<span className="text-slate-400">.</span>
                 </Link>
-                <button 
+                <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-slate-50 rounded-full transition-colors"
                 >
@@ -89,24 +89,22 @@ export default function Header() {
               <nav className="flex-grow p-8">
                 <ul className="space-y-6">
                   {navLinks.map((link, i) => (
-                    <motion.li 
+                    <motion.li
                       key={link.path}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <Link 
+                      <Link
                         to={link.path}
-                        className={`flex items-center justify-between text-xl font-medium tracking-tight group ${
-                          location.pathname === link.path ? 'text-slate-900' : 'text-slate-400'
-                        }`}
+                        className={`flex items-center justify-between text-xl font-medium tracking-tight group ${location.pathname === link.path ? 'text-slate-900' : 'text-slate-400'
+                          }`}
                       >
                         <span>{link.name}</span>
-                        <ArrowRight 
-                          size={20} 
-                          className={`transition-all duration-300 ${
-                            location.pathname === link.path ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'
-                          }`} 
+                        <ArrowRight
+                          size={20}
+                          className={`transition-all duration-300 ${location.pathname === link.path ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'
+                            }`}
                         />
                       </Link>
                     </motion.li>
