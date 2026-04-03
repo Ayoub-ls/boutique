@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Heart, Share2, ChevronLeft, Star, ShoppingBag, Plus, Minus } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MOCK_PRODUCTS } from '../data/products';
+import { MOCK_PRODUCTS } from '../data/products.js';
 import ProductCard from '../components/product/ProductCard';
 import { useShop } from '../context/ShopContext';
 
@@ -14,18 +14,9 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const { toggleWishlist, isInWishlist, addToCart } = useShop();
 
-  useEffect(() => {
-    const foundProduct = MOCK_PRODUCTS.find(p => p.id === parseInt(id));
-    if (foundProduct) {
-      setProduct(foundProduct);
-      setRelatedProducts(MOCK_PRODUCTS.filter(p => p.id !== foundProduct.id).slice(0, 3));
-    }
-    window.scrollTo(0, 0);
-  }, [id]);
 
-  if (!product) return <div className="p-20 text-center">Loading...</div>;
 
-  const isWishlisted = isInWishlist(product.id);
+
   const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
   const handleAddToCart = () => {
@@ -35,6 +26,16 @@ export default function ProductDetail() {
     }
     addToCart(product, selectedSize, quantity);
   };
+  useEffect(() => {
+    const foundProduct = MOCK_PRODUCTS.find(p => p.id === parseInt(id));
+    if (foundProduct) {
+      setProduct(foundProduct);
+      setRelatedProducts(MOCK_PRODUCTS.filter(p => p.id !== foundProduct.id).slice(0, 3));
+    }
+    window.scrollTo(0, 0);
+  }, [id]);
+  if (!product) return <div className="p-20 text-center">Loading...</div>;
+  console.log(product);
 
   return (
     <div className="flex flex-col gap-8 pb-24">
@@ -47,19 +48,19 @@ export default function ProductDetail() {
           <button className="p-2 hover:bg-slate-50 rounded-full">
             <Share2 size={20} className="text-primary" />
           </button>
-          <button 
+          <button
             onClick={() => toggleWishlist(product)}
             className="p-2 hover:bg-slate-50 rounded-full"
           >
-            <Heart size={20} className={isWishlisted ? 'fill-red-500 text-red-500' : 'text-primary'} />
+            <Heart size={20} className={'text-primary'} />
           </button>
         </div>
       </div>
 
       {/* Image Gallery */}
       <div className="relative w-full aspect-[3/4] bg-slate-100 overflow-hidden">
-        <img 
-          src={product.image} 
+        <img
+          src={product.image}
           alt={product.name}
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -110,11 +111,10 @@ export default function ProductDetail() {
               <button
                 key={size}
                 onClick={() => setSelectedSize(size)}
-                className={`w-12 h-12 flex items-center justify-center rounded-2xl border-2 font-bold transition-all ${
-                  selectedSize === size 
-                    ? 'border-primary bg-primary text-white' 
-                    : 'border-slate-100 text-primary hover:border-slate-300'
-                }`}
+                className={`w-12 h-12 flex items-center justify-center rounded-2xl border-2 font-bold transition-all ${selectedSize === size
+                  ? 'border-primary bg-primary text-white'
+                  : 'border-slate-100 text-primary hover:border-slate-300'
+                  }`}
               >
                 {size}
               </button>
@@ -126,14 +126,14 @@ export default function ProductDetail() {
         <div className="flex flex-col gap-3">
           <span className="text-sm font-bold uppercase tracking-widest">Quantity</span>
           <div className="flex items-center gap-4 bg-slate-50 w-fit p-1 rounded-2xl border border-slate-100">
-            <button 
+            <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
               className="p-2 hover:bg-white rounded-xl transition-colors"
             >
               <Minus size={18} />
             </button>
             <span className="w-8 text-center font-bold">{quantity}</span>
-            <button 
+            <button
               onClick={() => setQuantity(quantity + 1)}
               className="p-2 hover:bg-white rounded-xl transition-colors"
             >
@@ -145,7 +145,7 @@ export default function ProductDetail() {
 
       {/* Add to Cart Sticky Button */}
       <div className="fixed bottom-0 left-0 right-0 p-6 bg-white/80 backdrop-blur-md border-t border-slate-100 z-40">
-        <button 
+        <button
           onClick={handleAddToCart}
           className="w-full bg-primary text-white py-4 rounded-3xl font-bold flex items-center justify-center gap-3 shadow-xl active:scale-[0.98] transition-all"
         >

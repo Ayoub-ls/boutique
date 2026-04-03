@@ -1,10 +1,12 @@
+import { assets } from "../assets/assets.js";
+
 export const MOCK_PRODUCTS = [
   {
     id: 1,
     name: "Silk Satin Slip Dress",
-    price: 129.00,
-    originalPrice: 159.00,
-    image: "https://picsum.photos/seed/dress1/800/1200",
+    price: 125000,
+    originalPrice: 15900,
+    image: assets.sac1,
     category: "Dresses",
     badge: "TOP",
     isSale: true,
@@ -13,8 +15,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 2,
     name: "Oversized Cashmere Sweater",
-    price: 189.00,
-    image: "https://picsum.photos/seed/sweater1/800/1200",
+    price: 1800,
+    image: assets.sac2,
     category: "Knitwear",
     badge: "NEW",
     isSale: false,
@@ -23,8 +25,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 3,
     name: "High-Waisted Tailored Trousers",
-    price: 95.00,
-    image: "https://picsum.photos/seed/pants1/800/1200",
+    price: 9500,
+    image: assets.sac3,
     category: "Trousers",
     badge: "EXCLUSIVITÉ",
     isSale: false,
@@ -33,8 +35,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 4,
     name: "Leather Crossbody Bag",
-    price: 145.00,
-    image: "https://picsum.photos/seed/bag1/800/1200",
+    price: 1400,
+    image: assets.tallon1,
     category: "Accessories",
     badge: "TOP",
     isSale: false,
@@ -43,8 +45,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 5,
     name: "Linen Blend Blazer",
-    price: 110.00,
-    image: "https://picsum.photos/seed/blazer1/800/1200",
+    price: 7100,
+    image: assets.tallon2,
     category: "Outerwear",
     badge: "EXCLUSIVITÉ",
     isSale: false,
@@ -53,9 +55,9 @@ export const MOCK_PRODUCTS = [
   {
     id: 6,
     name: "Ribbed Knit Midi Skirt",
-    price: 75.00,
+    price: 7500,
     originalPrice: 95.00,
-    image: "https://picsum.photos/seed/skirt1/800/1200",
+    image: assets.tallon3,
     category: "Skirts",
     badge: "SALE",
     isSale: true,
@@ -64,8 +66,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 7,
     name: "Cotton Poplin Shirt",
-    price: 55.00,
-    image: "https://picsum.photos/seed/shirt1/800/1200",
+    price: 5500,
+    image: assets.shoe,
     category: "Tops",
     badge: "TOP",
     isSale: false,
@@ -74,8 +76,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 8,
     name: "Wide-Leg Denim Jeans",
-    price: 85.00,
-    image: "https://picsum.photos/seed/jeans1/800/1200",
+    price: 8500,
+    image: assets.tallon4,
     category: "Trousers",
     badge: "NEW",
     isSale: false,
@@ -84,8 +86,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 9,
     name: "Wool Blend Coat",
-    price: 245.00,
-    image: "https://picsum.photos/seed/coat1/800/1200",
+    price: 2450,
+    image: assets.tallon5,
     category: "Outerwear",
     badge: "EXCLUSIVITÉ",
     isSale: false,
@@ -94,8 +96,18 @@ export const MOCK_PRODUCTS = [
   {
     id: 10,
     name: "Suede Ankle Boots",
-    price: 165.00,
-    image: "https://picsum.photos/seed/boots1/800/1200",
+    price: 1650,
+    image: assets.vest1,
+    category: "Shoes",
+    badge: "TOP",
+    isSale: false,
+    description: "Chic suede ankle boots with a comfortable block heel."
+  },
+  {
+    id: 10,
+    name: "Suede Ankle Boots",
+    price: 6500,
+    image: assets.vast2,
     category: "Shoes",
     badge: "TOP",
     isSale: false,

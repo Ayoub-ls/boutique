@@ -4,6 +4,7 @@ import ProductGrid from '../components/product/ProductGrid';
 import { motion } from 'motion/react';
 import { MOCK_PRODUCTS } from '../data/products';
 import { Link } from 'react-router-dom';
+import { assets } from '../assets/assets';
 
 export default function Home() {
   const products = MOCK_PRODUCTS;
@@ -17,7 +18,7 @@ export default function Home() {
       <section className="px-6 flex flex-col gap-4">
         <h2 className="text-2xl font-bold tracking-tighter">Shop by Category</h2>
         <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
-          {['Sacs', 'Knitwear', 'Trousers', 'Accessories'].map((cat, i) => (
+          {['Sacs', 'Tallons', 'Shoes', 'Vests'].map((cat, i) => (
             <Link
               key={cat}
               to={`/shop?category=${cat}`}
@@ -32,7 +33,7 @@ export default function Home() {
               >
                 <div className="w-20 h-20 rounded-full bg-slate-100 overflow-hidden border-2 border-transparent group-hover:border-accent transition-all">
                   <img
-                    src={`https://picsum.photos/seed/${cat}/200/200`}
+                    src={`${i === 0 ? assets.sac1 : i === 1 ? assets.tallon1 : i === 2 ? assets.shoe : assets.vest1}`}
                     alt={cat}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -56,7 +57,7 @@ export default function Home() {
       <section className="px-6 grid grid-cols-1 gap-6">
         <Link to="/shop?category=Outerwear" className="relative h-64 rounded-3xl overflow-hidden group cursor-pointer">
           <img
-            src="./images/summer.avif"
+            src={assets.summer}
             alt="Summer Sale"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             referrerPolicy="no-referrer"

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { assets } from '../../assets/assets.js';
 
 export default function Hero() {
   return (
@@ -11,7 +12,7 @@ export default function Hero() {
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
-        src="./images/hero.avif"
+        src={assets.hero}
         alt="Spring Collection"
         className="absolute inset-0 w-full h-full object-cover"
         referrerPolicy="no-referrer"
